@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "aws-sso-sorter",
+  "description": "Sort the AWS accounts on the AWS SSO page",
+  "version": "1",
+  "author": "Logan Price",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Sorter",
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "static/images/aws-sso-16.png",
+      "32": "static/images/aws-sso-32.png",
+      "48": "static/images/aws-sso-48.png",
+      "64": "static/images/aws-sso-64.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://d-906766da4c.awsapps.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "static/images/aws-sso-16.png",
+    "32": "static/images/aws-sso-32.png",
+    "48": "static/images/aws-sso-48.png",
+    "64": "static/images/aws-sso-64.png"
+  },
+  "permissions": ["activeTab","declarativeContent"]
+}
